@@ -1,0 +1,37 @@
+<html ng-app="app">
+	<head>
+		<title>Test page</title>
+  		<meta charset="utf-8" />
+		<link rel="stylesheet" href="styles/build.css"/>
+		<link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
+	</head>
+	<body>
+		<div ng-controller="commonCtrl as vm">
+
+			<table class="table">
+				<thead>
+					<tr>
+						<td class="table-cell table-cell--header" ng-repeat="item in vm.exerciseHeader">{{item}}</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="table-row" ng-repeat="row in vm.exerciseList">
+						<td class="table-cell firstColumn">{{row.name}}</td>
+						<td class="table-cell">
+							<div class="status-icon" ng-click="vm.iconToggle(row.firstCycle)" ng-class="vm.getStatusClass(row.firstCycle)"></div>
+						</td>
+						<td class="table-cell">
+							<div class="status-icon" ng-click="vm.iconToggle(row.secondCycle)" ng-class="vm.getStatusClass(row.secondCycle)"></div>
+						</td>
+						<td class="table-cell">
+							<div class="status-icon" ng-click="vm.iconToggle(row.thirdCycle)" ng-class="vm.getStatusClass(row.thirdCycle)"></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+	
+		</div>
+		<script src="js/build.js"></script>	
+	</body>
+</html>
